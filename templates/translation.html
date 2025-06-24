@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translation Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 2em; }
+        h1 { color: #333; }
+        pre {
+            background: #f4f4f4;
+            padding: 1em;
+            border-radius: 6px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .download-link {
+            display: inline-block;
+            margin-top: 1em;
+            padding: 0.5em 1em;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📝 Translated Text</h1>
+
+    <pre>{{ translated_txt }}</pre>
+
+    {% if filename %}
+        <a href="{{ url_for('download_file', filename=filename) }}" class="download-link">
+            Download Translation
+        </a>
+    {% endif %}
+
+    <hr>
+
+    <h2>Upload Another PDF</h2>
+    <form method="POST" action="{{ url_for('convert') }}" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <p>{{ form.upload.label }}<br>{{ form.upload() }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload PDF</title>
+</head>
+<body>
+    <h1>Upload a PDF to Translate</h1>
+    <form method="POST" action="{{ url_for('convert') }}" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        
+        <p>
+            {{ form.upload.label }}<br>
+            {{ form.upload() }}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+
+    
+</body>
+</html>

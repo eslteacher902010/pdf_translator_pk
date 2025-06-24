@@ -1,0 +1,6 @@
+Flask>=2.3
+Flask-WTF>=1.1
+WTForms>=3.1
+python-dotenv>=1.0
+deepl>=1.16
+PyMuPDF>=1.22

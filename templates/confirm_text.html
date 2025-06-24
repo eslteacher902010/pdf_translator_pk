@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Text</title>
+</head>
+<body>
+    <h1>Confirm and Translate</h1>
+
+    <form method="POST" action="{{ url_for('translate_text') }}">
+        <textarea name="text" rows="15" cols="80">{{ extracted_text }}</textarea>
+        <br><br>
+
+        <label for="target_lang">Translate to:</label>
+        <select name="target_lang" id="target_lang">
+            <option value="HE">Hebrew</option>
+            <option value="AR">Arabic</option>
+            <option value="DE">German</option>
+            <option value="FR">French</option>
+            <option value="ES">Spanish</option>
+            <option value="IT">Italian</option>
+            <option value="JA">Japanese</option>
+            <option value="ZH">Chinese</option>
+            <option value="NL">Dutch</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Translate</button>
+    </form>
+</body>
+</html>
